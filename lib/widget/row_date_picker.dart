@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class RowDatePicker extends StatefulWidget {
-      RowDatePicker({Key key, this.title}) : super(key: key);
+      RowDatePicker({Key key, this.title, this.message = "Data Selezionata: ", this.dateFormat = "dd MM yyyy"}) : super(key: key);
    final DateTime dateTime = DateTime.now();
   final String title;
+  final String dateFormat;
+  final String message;
 DateTime getDateTime(){
   return dateTime;
 }
@@ -21,7 +23,7 @@ class _MyDatePicker extends State<RowDatePicker> {
 
   @override
   Widget build(BuildContext context) {
-    final DateFormat formatter = DateFormat("dd MM yyyy");
+    final DateFormat formatter = DateFormat(widget.dateFormat);
 
     void  getData(BuildContext context) async{
     var dataScelta = await showDatePicker(
@@ -44,7 +46,7 @@ class _MyDatePicker extends State<RowDatePicker> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Data selezionata: ' + formatter.format(_dateTime),
+                widget.message + formatter.format(_dateTime),
               ),
               IconButton(
                 icon: Icon( Icons.date_range),

@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class RowDatePicker extends StatefulWidget {
       RowDatePicker({Key key, this.title}) : super(key: key);
-    DateTime dateTime = DateTime.now();
+   final DateTime dateTime = DateTime.now();
   final String title;
 DateTime getDateTime(){
   return dateTime;
@@ -31,9 +31,8 @@ class _MyDatePicker extends State<RowDatePicker> {
         lastDate: DateTime(2050),
       );
     if (dataScelta != null) setState(() => _dateTime = dataScelta); 
-
-
     }
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template_prj/components/row_date_picker.dart';
+import 'package:template_prj/widget/row_date_picker.dart';
 
 void main() => runApp(MyApp());
 

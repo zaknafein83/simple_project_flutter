@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class RowDatePicker extends StatefulWidget {
-      RowDatePicker({Key key, }) : super(key: key);
-
+      RowDatePicker({Key key, this.title}) : super(key: key);
     DateTime dateTime = DateTime.now();
-
+  final String title;
 DateTime getDateTime(){
   return dateTime;
 }
@@ -37,7 +36,7 @@ class _MyDatePicker extends State<RowDatePicker> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("widget.title"),
+        title: Text(widget.title),
       ),
       body: Column(            
         mainAxisAlignment: MainAxisAlignment.center,
